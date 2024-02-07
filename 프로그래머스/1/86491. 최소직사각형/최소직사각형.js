@@ -1,16 +1,11 @@
 function solution(sizes) {
-    let widths = [];
-    let heights = [];
-    
+    let width = [];
+    let height = [];
     sizes.forEach(item => {
-        if(item[0] > item[1]) {
-            widths.push(item[0]);
-            heights.push(item[1]);
-        } else {
-            widths.push(item[1]);
-            heights.push(item[0]);
-        }
+        item.sort((a, b) => b - a)
+        width.push(item[0]);
+        height.push(item[1])
     })
     
-    return Math.max(...widths) * Math.max(...heights)
+    return Math.max(...width) * Math.max(...height)
 }
